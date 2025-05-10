@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ main ]
 
-  workflow_dispatch:
 
 jobs:
   build-sphinx:
@@ -22,8 +21,9 @@ jobs:
           name: DocumentationHTML
           path: docs/build/html
 
-      - name: Deploy 🚀
+     
       - uses: JamesIves/github-pages-deploy-action@v4.2.3
+        name: Deploy 🚀
         with:
           branch: gh-pages
           folder: _site
