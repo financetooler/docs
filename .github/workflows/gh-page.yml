@@ -28,6 +28,6 @@ jobs:
         name: Deploy 🚀
         with:
           branch: gh-pages
-          folder: build
+          folder: build/dirhtml
           clean: true
           single-commit: true
