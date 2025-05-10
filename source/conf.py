@@ -13,7 +13,9 @@
 import os, sys, re
 import pypose_sphinx_theme
 
-proj_root = os.path.abspath(os.path.join(__file__, "..", "..", ".."))
+# proj_root = os.path.abspath(os.path.join(__file__, "..", "..", ".."))
+proj_root = os.path.abspath(os.path.join(__file__, "..", ".."))
+
 sys.path.insert(0, proj_root)
 
 
@@ -34,7 +36,7 @@ def find_version(file_path: str) -> str:
         raise RuntimeError(f"Unable to find version string in {file_path}")
     return version_match.group(1)
 
-version = find_version(os.path.join(proj_root, "pypose/_version.py"))
+version = find_version(os.path.join(proj_root, "_version.py"))
 
 release = "main"
 if RELEASE:
