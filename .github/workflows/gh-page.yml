@@ -1,0 +1,23 @@
+name: build-sphinx-html
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build-sphinx:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ammaraskar/sphinx-action@master
+        name: Build Sphinx documentation
+        with:
+          docs-folder: "./"
+      - uses: actions/upload-artifact@v1
+        name: Save html artifacts
+        with:
+          name: DocumentationHTML
+          path: docs/build/html
