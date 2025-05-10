@@ -15,17 +15,12 @@ jobs:
         name: Build Sphinx documentation
         with:
           docs-folder: "./"
-      - uses: actions/upload-artifact@v1
-        name: Save html artifacts
-        with:
-          name: DocumentationHTML
-          path: docs/build/html
 
      
       - uses: JamesIves/github-pages-deploy-action@v4.2.3
         name: Deploy 🚀
         with:
           branch: gh-pages
-          folder: _site
+          folder: docs/build/html/
           clean: true
           single-commit: true
